@@ -17,13 +17,19 @@
 	    <label for="n1">Numero 01</label><input type="text" name="n1" id="n1"><br>
 	    <label for="n2">Numero 02</label><input type="text" name="n2" id="n2"><br>
 	    Operação:<br>
-	    <input type="submit" name="x1" id="x1" ><label for="x1">Mais(+)</label><br>         
-	    <input type="submit" name="x2" id="x2"><label for="x2">Menos(-)</label><br>                
-	    <input type="submit" name="x3" id="x3"><label for="x3">Vezes(*)</label><br>       
-	    <input type="submit" name="x4" id="x4"><label for="x4">Divisao(/)<label><br><br>   
+	    <label for="x1">(++++)</label><input type="submit" name="x1" id="x1" value="MAIS"><label for="x1">(++++)</label><br>         
+	    <label for="x2">(----)</label><input type="submit" name="x2" id="x2" value="MENOS"><label for="x2">(----)</label><br>                
+	    <label for="x3">(****)</label><input type="submit" name="x3" id="x3" value="Vezes"><label for="x3">(****)</label><br>       
+	    <label for="x4">(////)</label><input type="submit" name="x4" id="x4" value="Divisão"><label for="x4">(////)<label><br><br>   
     </form>
     <?php
         $por = 0;
+        if (($_POST['n1']) == 0){
+            $_POST['n1'] = 0;
+        }
+        if (($_POST['n2']) == 0){
+            $_POST['n2'] = 0;
+        }
         if(!empty($_POST['n1']) or !empty($_POST['n2'])){
             if(!$n1 = filter_input(INPUT_POST,"n1",FILTER_VALIDATE_FLOAT)){
                 $por = -10;
